@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/2e8ce961d7.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<div id="header">
+    <div id="container">
+        <nav>
+           <img src="images/calvin-logo.png" class="logo"> 
+           <!-- Side Menu -->
+           <ul id="sidemenu"> 
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+           </ul>
+           <!-- Menu Icon -->
+           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <!-- Header Text -->
+        <div class="header-text">
+            <p>Software Engineer</p>
+            <h1>Meet <span>Calvin</span> Van Auken</h1>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/image0.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <!-- About Me Text -->
+                <p>
+                    <!-- Your Personal Story -->
+                </p>
+                <!-- Tabs -->
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    <p class="tab-links" onclick="opentab('OtherPassions')">Other Passions</p>
+                </div>
+                <!-- Tab Contents -->
+                <div class="tab-contents active-tab" id="Skills">
+                    <!-- Your Skills -->
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Designing Web/App interfaces</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                <!-- More Tab Contents -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div id="services">
+    <div class="container">
+        <h1 class="subtitle">My Services</h1>
+        <!-- Your Services -->
+        <div class="services-list">
+            <!-- Service 1 -->
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>“Lorem ipsum dolor sit amet...</p>
+                <a href="#">Learn more</a> 
+            </div>
+            <!-- Service 2 -->
+            <!-- More Services -->
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Section -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <!-- Your Portfolio -->
+        <div class="work-list">
+            <!-- Portfolio Item 1 -->
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Soon to Come</h3>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <a href="#"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <!-- Portfolio Item 2 -->
+            <!-- More Portfolio Items -->
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Me</h1>
+                <!-- Your Contact Information -->
+                <p><i class="fas fa-paper-plane"></i> cjvanauken2424@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 727-285-3721</p>
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <!-- Download Resume Button -->
+                <a href="" class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <!-- Contact Form -->
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Tab Functionality
+    var tablinks = document.querySelectorAll(".tab-links");
+    var tabcontents = document.querySelectorAll(".tab-contents");
+
+    function opentab(tabname) {
+        for (var tablink of tablinks) {
+            tablink.classList.remove("active-link"); 
+        }
+        for (var tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab"); 
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // Side Menu Functionality
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right= "-200px";
+    }
+</script>
+</body>
+</html>
